@@ -1,0 +1,20 @@
+<h1><%= @list.name %></h1>
+<image class="responsive-img" src=<%= @list.img_url %> alt="list logo" />
+<br />
+<% if @list.destination %>
+  <%= link_to "#{@list.destination.city}", list_destination_path(@list, @list.destination) %>
+<% else %>
+  <%= link_to "Add Destination", new_list_destination_path(@list) %>
+<% end %>
+<hr />
+<h2>Activities</h2>
+<%= link_to 'Add Activity', new_list_activity_path(@list) %>
+<ul>
+  <% @list.activities.each do |a| %>
+    <li><%= link_to a.description, list_activity_path(@list, a) %></li>
+  <% end %>
+</ul>
+<hr />
+<%= link_to "Back To Lists", lists_path %>
+<%= link_to "Edit List", edit_list_path(@list) %>
+<%= link_to "Delete List", @list, method: :delete %>

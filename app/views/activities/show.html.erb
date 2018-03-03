@@ -1,0 +1,17 @@
+<h1><%= @activity.description %></h1>
+<%= link_to 'Back To List', @list %>
+<%= link_to 'Edit', edit_list_activity_path([@list, @activity]) %>
+<%= link_to 'Delete', [@list, @activity], method: :delete %>
+<hr />
+<h1>Notes</h1>
+<%= link_to 'New Note', new_activity_note_path(@activity) %>
+<ul>
+  <% @activity.notes.each do |note| %>
+    <li>
+        <%= note.body %>
+        <br />
+        <%= link_to 'Edit Note', edit_activity_note_path(@activity, note) %>
+        <%= link_to 'Delete Note', [@activity, note], method: :delete %>
+    </li>
+  <% end %>
+</ul>

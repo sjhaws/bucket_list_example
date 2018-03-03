@@ -1,0 +1,7 @@
+<h1><%= @destination.country %></h1>
+<p>City: <%= @destination.city %>
+<image class="responsive-img" src=<%= @destination.img_url %> alt="destination" />
+<hr>
+<%= link_to "Back to #{@list.name}", list_path(@list) %>
+<%= link_to "Edit", edit_list_destination_path(@list, @destination) %>
+<%= link_to "Delete", [@list, @destination], method: :delete %>

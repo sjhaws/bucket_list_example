@@ -1,0 +1,6 @@
+<%= form_for [@activity, @note] do |f| %>
+  <%= f.label :body, required: true %>
+  <%= f.text_field :body %>
+  <br />
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,11 @@
+<h1><%= @list.id ?  "Edit #{@list.name}" : 'Create A List' %></h1>
+<hr />
+<%= form_for @list do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true %>
+  <br />
+  <%= f.label :image %>
+  <%= f.text_field :img_url, placeholder: 'http://someimg.jpg' %>
+  <br />
+  <%= f.submit %>
+<% end %>
